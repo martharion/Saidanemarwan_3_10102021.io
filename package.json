@@ -1,0 +1,19 @@
+{
+  "name": "projet3",
+  "version": "1.0.0",
+  "description": "\"Projet 3 OpenClassrooms\"",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:.public/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martharion/Saidanemarwan_3_10102021.io.git"
+  },
+  "author": "\"Saidane Marwan\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martharion/Saidanemarwan_3_10102021.io/issues"
+  },
+  "homepage": "https://github.com/martharion/Saidanemarwan_3_10102021.io#readme"
+}
