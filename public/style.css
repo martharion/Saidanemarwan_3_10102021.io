@@ -1,0 +1,93 @@
+/* Variables */
+/* Colors */
+/* Dimensions */
+/* Mixins */
+/* Placeholders */
+.introduction, body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fonts rules, size and color for all pages */
+body {
+  font-family: Roboto;
+}
+
+a {
+  list-style-type: none;
+  text-decoration: none;
+  color: black;
+}
+
+/* Header */
+.map {
+  font-size: 16px;
+  font-weight: bold;
+}
+.map__selection {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Margins, paddings and sizing for all pages */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  margin: auto;
+}
+
+/* Header */
+.banner {
+  width: 100%;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.banner__box {
+  width: 100%;
+  display: flex;
+}
+.banner__logo {
+  width: 200px;
+  height: 50px;
+  margin: auto;
+  padding: 5px 0;
+}
+
+.map {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.map__selection {
+  width: 100%;
+  align-content: center;
+  border-style: none;
+  cursor: pointer;
+  padding: 20px 0;
+  margin: auto;
+  border-style: none;
+  background-color: #e3e3e3;
+}
+
+.introduction {
+  width: 100%;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+.introduction__heading {
+  width: 300px;
+  margin: auto;
+}
+.introduction__text {
+  margin: auto;
+}
+
+/*# sourceMappingURL=style.css.map */

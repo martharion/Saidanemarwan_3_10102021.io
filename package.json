@@ -2,9 +2,9 @@
   "name": "projet3",
   "version": "1.0.0",
   "description": "\"Projet 3 OpenClassrooms\"",
-  "main": "index.html",
+  "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:.public/style.css"
+    "sass": "sass --watch ./sass/main.scss:./public/style.css"
   },
   "repository": {
     "type": "git",
