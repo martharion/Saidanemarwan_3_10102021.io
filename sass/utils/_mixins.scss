@@ -5,3 +5,17 @@
     text-decoration: none;
 }
 
+@mixin auto-zero {
+    width: 100%;
+    margin: auto;
+    padding: 0;
+}
+
+@mixin border-radius-top {
+    border-radius: $radius-light $radius-light 0 0;
+}
+
+@mixin border {
+    border-radius: $radius-light;
+    box-shadow: 0 5px 10px 2px rgba(62, 73, 64, 0.13);
+}

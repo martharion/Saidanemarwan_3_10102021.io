@@ -33,7 +33,7 @@
         align-content: center;
         border-style: none;
         cursor: pointer;
-        padding: 20px 0;
+        padding: 16px 0;
         margin: auto;
         border-style: none;
         background-color: darken($color: $color-grey, $amount: 5%);
@@ -47,11 +47,158 @@
     background-color: $color-grey;
 
     &__heading {
+        padding-top: 35px;
         width: 300px;
+        font-size: 28px;
         margin: auto;  
     }
 
     &__text {
+        padding-top: 10px;
+        width: 320px;
+        font-size: 18px;
         margin: auto;
+    }
+
+    &__btn {
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+}
+
+.functioning {
+    @extend %flex-col;
+    justify-content: space-evenly;
+    margin: 40px 0;
+
+    &__heading {
+        width: 90%;
+        margin: auto;
+    }
+
+    &__list {
+        @extend %flex-col;
+        justify-content: space-evenly;
+        margin: auto;
+        padding: 0;
+        list-style-type: none;
+        counter-reset: number;
+    }
+
+    &__step {
+        
+    }
+
+    &__rule {
+        width: 80vw;
+        height: 70px;
+        margin: 20px 0;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 25px;
+        border-style: none;
+        text-align: left;
+        outline: none;
+        i {
+            padding: 0 20px 0 40px;
+        }
+
+        &__lightpurple {
+            background-color: lighten($color: $color-primary, $amount: 35%);
+            i {
+                color: $color-primary;
+            }
+        }
+    }
+}
+
+.repertory {
+    @extend %flex-col;
+    background-color: $color-grey;
+
+    &__heading {
+        margin: 40px 20px 0;
+    }
+
+    &__container {
+        margin-bottom: 30px;
+    }
+}
+
+.card {
+    width: 90%;
+    margin: 20px auto;
+    background-color: white;
+    @include border;
+    position: relative;
+
+    &__new {
+        width: 80px;
+        font-size: 16px;
+        font-weight: 900;
+        text-align: center;
+        border-radius: 5px;
+        background-color: $color-tertiary;
+        color: darken($color: $color-tertiary, $amount: 35%);
+        padding: 10px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    &__img {
+        width: 100%;
+        height: 200px;
+        @include border-radius-top;
+        object-fit: cover;
+        object-position: 25% 50%;
+    }
+
+    &__caption {
+        @extend %flex-row;
+        justify-content: space-between;
+        margin: 0 10px;
+        text-align: left;
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 900;
+    }
+
+    &__heart {
+        width: 50px;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.footer {
+    width: 100%;
+    background-color: $color-black;
+
+    &__logo {
+        width: 100px;
+        margin: 10px 30px;
+    }
+
+    &__list {
+        @include no-deco;
+        margin: 0 30px 30px;
+        padding: 0;
+    }
+
+    &__item {
+        color: white;
+        i {
+            font-size: 12px;
+        }
+        .fa-utensils {
+            margin-right: 5px;
+        }
+        .fa-handsd-helping {
+            margin-right: 5px;
+        }
     }
 }

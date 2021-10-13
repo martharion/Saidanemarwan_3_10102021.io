@@ -3,7 +3,12 @@
 /* Dimensions */
 /* Mixins */
 /* Placeholders */
-.introduction, body {
+.card__caption {
+  display: flex;
+  flex-direction: row;
+}
+
+.repertory, .functioning__list, .functioning, .introduction, body {
   display: flex;
   flex-direction: column;
 }
@@ -71,7 +76,7 @@ body {
   align-content: center;
   border-style: none;
   cursor: pointer;
-  padding: 20px 0;
+  padding: 16px 0;
   margin: auto;
   border-style: none;
   background-color: #e3e3e3;
@@ -83,11 +88,137 @@ body {
   background-color: #f0f0f0;
 }
 .introduction__heading {
+  padding-top: 35px;
   width: 300px;
+  font-size: 28px;
   margin: auto;
 }
 .introduction__text {
+  padding-top: 10px;
+  width: 320px;
+  font-size: 18px;
   margin: auto;
+}
+.introduction__btn {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.functioning {
+  justify-content: space-evenly;
+  margin: 40px 0;
+}
+.functioning__heading {
+  width: 90%;
+  margin: auto;
+}
+.functioning__list {
+  justify-content: space-evenly;
+  margin: auto;
+  padding: 0;
+  list-style-type: none;
+  counter-reset: number;
+}
+.functioning__rule {
+  width: 80vw;
+  height: 70px;
+  margin: 20px 0;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  border-style: none;
+  text-align: left;
+  outline: none;
+}
+.functioning__rule i {
+  padding: 0 20px 0 40px;
+}
+.functioning__rule__lightpurple {
+  background-color: #f2eafb;
+}
+.functioning__rule__lightpurple i {
+  color: #9356DC;
+}
+
+.repertory {
+  background-color: #f0f0f0;
+}
+.repertory__heading {
+  margin: 40px 20px 0;
+}
+.repertory__container {
+  margin-bottom: 30px;
+}
+
+.card {
+  width: 90%;
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px 2px rgba(62, 73, 64, 0.13);
+  position: relative;
+}
+.card__new {
+  width: 80px;
+  font-size: 16px;
+  font-weight: 900;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #99E2D0;
+  color: #2c9c81;
+  padding: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.card__img {
+  width: 100%;
+  height: 200px;
+  border-radius: 15px 15px 0 0;
+  object-fit: cover;
+  object-position: 25% 50%;
+}
+.card__caption {
+  justify-content: space-between;
+  margin: 0 10px;
+  text-align: left;
+}
+.card__title {
+  font-size: 20px;
+  font-weight: 900;
+}
+.card__heart {
+  width: 50px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.footer {
+  width: 100%;
+  background-color: #313131;
+}
+.footer__logo {
+  width: 100px;
+  margin: 10px 30px;
+}
+.footer__list {
+  list-style-type: none;
+  text-decoration: none;
+  margin: 0 30px 30px;
+  padding: 0;
+}
+.footer__item {
+  color: white;
+}
+.footer__item i {
+  font-size: 12px;
+}
+.footer__item .fa-utensils {
+  margin-right: 5px;
+}
+.footer__item .fa-handsd-helping {
+  margin-right: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */
