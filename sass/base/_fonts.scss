@@ -8,15 +8,3 @@ a {
     @include no-deco;
     color: black;
 }
-
-/* Header */
-
-.map {
-    font-size: 16px;
-    font-weight: bold;
-
-    &__selection {
-        font-size: 16px;
-        font-weight: bold;
-    }
-}
