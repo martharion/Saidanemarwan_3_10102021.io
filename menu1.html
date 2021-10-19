@@ -4,7 +4,7 @@
     <head>
         <title>OhmyFood! - La palette du goût</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <meta name="viewport" content="initial-scale=1">
         <script src="https://kit.fontawesome.com/e1888d9eb4.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="public/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,18 +25,18 @@
         </header>
 
         <main class="menu">
-            <img class="menu__img" src="" alt="Photo d'un plat du restaurant La palette du goût">
+            <img class="menu__img" src="images/restaurants/la_palette_du_gout.jpg" alt="Photo d'un plat du restaurant La palette du goût">
 
             <div class="menu__title">
                 <h1>La palette du goût</h1>
-                <i class="far fa-heart"></i>
+                <i class="far fa-heart menu__fav"></i>
             </div>
 
             <section class="menu__section">
                 <h2 class="menu__heading">ENTRÉES</h2>
 
-                <ul class="animation-spawn">    <!--Apparition avec un délais-->
-                    <li class="dish">
+                <ul class="anim-spawn">    <!--Apparition avec un délais-->
+                    <li class="dish anim-spawn--item anim-delay05">
                         <div class="dish__content">
                             <h4 class="dish__name">Fricassée d'escargot</h4>
                             <p>
@@ -50,7 +50,7 @@
                         </div>
                     </li>
 
-                    <li class="dish">
+                    <li class="dish anim-spawn--item anim-delay10">
                         <div class="dish__content">
                             <h4 class="dish__name">Foie gras de canard mi-cuit</h4>
                             <p>
@@ -64,7 +64,7 @@
                         </div>
                     </li>
 
-                    <li class="dish">
+                    <li class="dish anim-spawn--item anim-delay15">
                         <div class="dish__content">
                             <h4 class="dish__name">Oeuf au plat</h4>
                             <p>
@@ -83,8 +83,8 @@
             <section class="menu__section">
                 <h2 class="menu__heading">PLATS</h2>
 
-                <ul class="animation-spawn">
-                    <li class="dish">
+                <ul class="anim-spawn">
+                    <li class="dish anim-spawn--item anim-delay05">
                         <div class="dish__content">
                             <h4 class="dish__name">Filet de boeuf aux herbes</h4>
                             <p>
@@ -98,7 +98,7 @@
                         </div>
                     </li>
 
-                    <li class="dish">
+                    <li class="dish anim-spawn--item anim-delay10">
                         <div class="dish__content">
                             <h4 class="dish__name">Parmentier de queue de boeuf</h4>
                             <p>
@@ -112,7 +112,7 @@
                         </div>
                     </li>
 
-                    <li class="dish">
+                    <li class="dish anim-spawn--item anim-delay15">
                         <div class="dish__content">
                             <h4 class="dish__name">Filet de Turbot</h4>
                             <p>
@@ -131,8 +131,8 @@
             <section class="menu__section">
                 <h2 class="menu__heading">DESSERTS</h2>
 
-                <ul class="animation-spawn">
-                    <li class="dish">
+                <ul class="anim-spawn">
+                    <li class="dish anim-spawn--item anim-delay05">
                         <div class="dish__content">
                             <h4 class="dish__name">Paris-Brest</h4>
                             <p>
@@ -146,7 +146,7 @@
                         </div>
                     </li>
 
-                    <li class="dish">
+                    <li class="dish anim-spawn--item anim-delay10">
                         <div class="dish__content">
                             <h4 class="dish__name">Macaron au chocolat d'exception</h4>
                             <p>
@@ -160,7 +160,7 @@
                         </div>
                     </li>
 
-                    <li class="dish">
+                    <li class="dish anim-spawn--item anim-delay15">
                         <div class="dish__content">
                             <h4 class="dish__name">Mousse au chocolat</h4>
                             <p>
@@ -180,7 +180,7 @@
         </main>
 
         <footer class="footer">
-            <img class="footer__logo" src="" alt="logo OhmyFood!">
+            <img class="footer__logo" src="images/logo/ohmyfood@2x.svg" alt="logo OhmyFood!">
 
             <ul class="footer__list">
                 <li>
