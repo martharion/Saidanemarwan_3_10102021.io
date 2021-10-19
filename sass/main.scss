@@ -14,6 +14,12 @@
         display: flex;
     }
 
+    &__link {
+        font-size: 20px;
+        color: black;
+        padding: 20px;
+    }
+
     &__logo {
         width: 200px;
         height: 50px;
@@ -23,21 +29,46 @@
 }
 
 .map {
+    @extend %flex-col;
     width: 100%;
     height: 50px;
-    text-align: center;
-    flex-wrap: wrap;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
 
     &__selection {
         width: 100%;
+        position: relative;
+        font-size: 16px;
+        font-weight: bold;
         align-content: center;
         border-style: none;
         cursor: pointer;
-        padding: 16px 0;
+        padding: 20px 0;
         margin: auto;
         border-style: none;
         background-color: darken($color: $color-grey, $amount: 5%);
+        box-shadow: inset 0px 20px 2px -15px rgba(59, 68, 66, 0.19);
     }
+
+    &__list {
+        @extend %flex-col;
+        @include no-deco;
+        width: 100%;
+        background-color: white;
+        text-align: left;
+        border-radius: $radius-light;
+        visibility: hidden;
+        transition: all 0.5s ease;
+    }
+
+    &__item {
+        padding: 10px;
+    }
+}
+
+.map__selection:focus + ul {
+    visibility: visible;
 }
 
 .introduction {
@@ -57,12 +88,17 @@
         padding-top: 10px;
         width: 320px;
         font-size: 18px;
-        margin: auto;
+        margin: 0 auto 30px;
     }
 
     &__btn {
-        margin-top: 30px;
-        margin-bottom: 50px;
+        margin: 0 auto 60px;
+        padding: 15px 20px;
+        color: white;
+        background: $color-btn;
+        border-radius: $radius-medium;
+        box-shadow: 0px 5px 10px 2px rgba(62, 73, 64, 0.12);
+
     }
 }
 
@@ -82,11 +118,7 @@
         margin: auto;
         padding: 0;
         list-style-type: none;
-        counter-reset: number;
-    }
-
-    &__step {
-        
+        counter-reset: number; /* réinitialise un compteur CSS avec une valeur donnée */
     }
 
     &__rule {
@@ -112,6 +144,20 @@
     }
 }
 
+.functioning__step::before {
+    content: counter(number);   /* génére le contenu d'un élément */
+    counter-increment: number;  /* augmente la valeur d'un compteur CSS d'une valeur donnée */
+    position: absolute;
+    color: white;
+    background-color: $color-primary;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 10px 3px;
+    margin: 40px -10px;
+    border: 1px solid $color-primary;
+    border-radius: $radius-heavy;
+}
+
 .repertory {
     @extend %flex-col;
     background-color: $color-grey;
@@ -135,7 +181,7 @@
     &__new {
         width: 80px;
         font-size: 16px;
-        font-weight: 900;
+        font-weight: bold;
         text-align: center;
         border-radius: 5px;
         background-color: $color-tertiary;
@@ -171,6 +217,33 @@
         font-size: 30px;
         display: flex;
         align-items: center;
+        position: relative;
+        i {
+            position: absolute;
+        }
+    }
+}
+
+.heart--full {
+    opacity: 0;
+    background: $color-heart;
+    background-clip: content-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 500ms;
+    transform: scale(0);
+}
+
+.card__heart:hover {
+
+    .heart--empty {
+        opacity: 0;
+        transition-duration: 1s;
+    }
+
+    .heart--full {
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
@@ -200,5 +273,372 @@
         .fa-handsd-helping {
             margin-right: 5px;
         }
+    }
+}
+
+.menu {
+    width: 100%;
+    @extend %flex-col;
+    justify-content: space-evenly;
+    background-color: $color-grey;
+
+    &__img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+    }
+
+    &__title {
+        @extend %flex-row;
+        height: 100px;
+        font-family: Shrikhand;
+        font-style: italic 900 black;
+        background-color: $color-grey;
+        margin-top: -100px;
+        padding: 0 15px;
+        border-radius: $radius-medium $radius-medium 0 0;
+        h1 {
+            width: 90%;
+        }
+        i {
+            width: 10%;
+            font-size: 30px;
+        }
+    }
+
+    &__fav {
+        padding: 30px 0;
+    }
+
+    &__heading {
+        margin: 0 20px;
+        padding-bottom: 5px;
+        font-weight: normal;
+    }
+
+    &__btn {
+        margin: 30px auto 60px;
+        padding: 15px 50px;
+        color: white;
+        background: linear-gradient(#FF79DA, #9356DC);
+        border-radius: $radius-medium;
+        box-shadow: 0px 5px 10px 2px rgba(62, 73, 64, 0.12);
+        border: none;
+    }
+}
+
+.anim-spawn {
+    width: 100%;
+    margin: auto;
+    padding: 0;
+    animation: anim-list 1.5s linear 0s; /* animation-name, animation duration, animation timing-function, animation-delay */
+    animation-fill-mode: both;
+}
+
+.anim-spawn--item {
+    animation: anim-item 1.5s linear 0s; /* animation-name, animation duration, animation timing-function, animation-delay */
+    animation-fill-mode: both;
+}
+
+.anim-delay05 {
+    animation-delay: 500ms;
+}
+
+.anim-delay10 {
+    animation-delay: 1s;
+}
+
+.anim-delay15 {
+    animation-delay: 1.5s;
+}
+
+.anim-spawn--m2 {
+    animation: anim-list 1.5s linear 0s;
+    animation-fill-mode: both;
+}
+
+.anim-delay0375 {
+    animation-delay: 375ms;
+}
+
+.anim-delay0750 {
+    animation-delay: 750ms;
+}
+
+.anim-delay1125 {
+    animation-delay: 1125ms;
+}
+
+@keyframes anim-list {
+
+    0% {
+        display: none;
+        transform-origin: top;
+        overflow: hidden;
+        height: 0;
+        opacity: 0.1;
+    }
+
+    25% {
+        overflow: hidden;
+        height: 25%;
+        opacity: 0.3;
+    }
+
+    50% {
+        overflow: hidden;
+        height: 50%;
+        opacity: 0.5;
+    }
+
+    75% {
+        overflow: hidden;
+        height: 75%;
+        opacity: 0.7;
+    }
+
+    100% {
+        height: 100%;
+        opacity: 0.9;
+    }
+}
+
+@keyframes anim-item {
+
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    25% {
+        transform: translateY(15px);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: translateY(10px);
+        opacity: 0.6;
+    }
+
+    75% {
+        transform: translateY(5px);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.dish {
+    @extend %flex-row;
+    width: 90vw;
+    height: 70px;
+    margin: 20px auto;
+    background-color: white;
+    @include border;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    &__content {
+        width: 100%;
+        @include no-deco;
+        text-align: left;
+        padding: 10px;
+        p {
+            @extend %flex-row;
+            justify-content: space-between;
+        }
+    }
+
+    &__name {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    &__ingredient {
+        width: 100%;
+        font-size: 14px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    &__price {
+        width: 30px;
+        font-weight: bold;
+    }
+
+    &__check {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: absolute;
+        right: -70px;
+        width: 70px;
+        font-size: 22px;
+        color: white;
+        background-color: $color-tertiary;
+        border-radius: 0 $radius-light $radius-light 0;
+        transition: all 500ms ease-out;
+        i {
+            transition: all 0 ease-in-out; 
+        }
+    }
+}
+
+.dish {
+
+    .dish:hover &__check {
+        right: 0;
+        i {
+            transform: rotate(360deg);
+            transition-duration: 500ms;
+        }
+    }
+
+    .dish:hover &__content {
+        width: calc(100% - 70px);
+    }
+
+    .dish:hover &__name {
+        width: calc(100% - 35px);
+    }
+
+    .dish:hover &__ingredient {
+        width: calc(100% - 35px);
+    }
+}
+
+@media screen and (max-width: 325px) {
+    .functioning {
+
+        &__rule {
+            font-size: 14px;
+        }
+    }
+
+    .menu {
+
+        &__title {
+            font-size: 13px;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .repertory {
+
+        &__container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+    }
+
+    .card {
+        width: 40vw;
+    }
+
+    .menu {
+
+        &__title {
+            padding: 0 9vw 0 15vw;
+        }
+
+        &__heading {
+            width: 150px;
+            margin: 0 auto;
+        }
+    }
+
+    .dish {
+        width: 70vw;
+    }
+}
+
+.loading {
+    width: 100%;
+    height: 100%;
+    @extend %flex-col;
+    animation: anim-screen 2s ease;
+    animation-fill-mode: both;
+
+    &__box {
+        width: 250px;
+        height: 75px;
+        display: inline-flex;
+        justify-content: space-evenly;
+        position: fixed;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        animation: anim-length 2s ease;
+        visibility: hidden;
+    }
+
+    &__spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid $color-primary;
+        border-top: 3px solid $color-secondary;
+        border-radius: $radius-heavy;
+        margin: 8px 0 0 25px;
+        animation: anim-spin 2s linear infinite;
+    }
+
+    &__text {
+        font-size: 20px;
+        font-weight: bold;
+        color: $color-primary;
+    }
+}
+
+@keyframes anim-screen {
+
+    0% {
+        opacity: 0;
+    }
+
+    99% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes anim-length {
+
+    0% {
+        visibility: visible;
+    }
+
+    100% {
+        visibility: hidden;
+    }
+}
+
+@keyframes anim-spin {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
     }
 }
