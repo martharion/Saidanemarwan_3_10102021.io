@@ -536,7 +536,22 @@
 }
 
 @media screen and (min-width: 1024px) {
+    .functioning {
+
+        &__heading {
+            text-align: center;
+        }
+
+        &__rule {
+            width: 50vw;
+        }
+    }
+
     .repertory {
+
+        &__heading {
+            text-align: center;
+        }
 
         &__container {
             display: flex;
