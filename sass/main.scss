@@ -251,13 +251,20 @@
     }
 }
 
+.svg-white-logo {
+    height: 0;
+}
+
 .footer {
     width: 100%;
     background-color: $color-black;
 
     &__logo {
-        width: 120px;
+        width: 200px;
+        height: 35px;
+        background-color: #FFFFFF;
         margin: 10px 30px;
+        clip-path: url(#ohmyfoodlogo);
     }
 
     &__list {
@@ -601,7 +608,7 @@
         }
 
         &__rule {
-            width: 50vw;
+            width: 20vw;
         }
     }
 
@@ -609,6 +616,7 @@
 
         &__heading {
             text-align: center;
+            margin: 40px 20px 20px;
         }
 
         &__container {
