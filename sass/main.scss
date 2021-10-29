@@ -9,12 +9,10 @@
 @import "./components/anim-check";
 @import "./components/anim-menu";
 @import "./components/hearts";
-@import "./components/anim-menu";
 @import "./components/loading";
-@import "./components/anim-menu";
 @import "./components/map";
-@import "./components/anim-menu";
-@import "./base/responsive";
+
+/* Rules for all menus pages */
 
 .menu {
     width: 100%;
@@ -114,3 +112,5 @@
         font-weight: bold;
     }
 }
+
+@import "./base/responsive";
