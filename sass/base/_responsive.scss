@@ -1,0 +1,46 @@
+/* Responsive for all menus pages */
+
+@media screen and (max-width: 375px) {
+    .menu {
+
+        &__title {
+            h1 {
+                padding-top: 14px;
+                font-size: 24px;
+            }
+        }
+
+        &__fav {
+            font-size: 26px;
+        }
+
+        &__heading {
+            font-size: 20px;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .card {
+        width: 40vw;
+    }
+
+    .menu {
+
+        &__img {
+            height: 500px;
+        }
+
+        &__title {
+            padding: 0 18vw 0 15vw;
+        }
+
+        &__heading {
+            margin: 0 auto;
+        }
+    }
+
+    .dish {
+        width: 55vw;
+    }
+}
