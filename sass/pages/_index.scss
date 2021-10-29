@@ -1,0 +1,189 @@
+/* Rules for the index (main) page */
+
+.introduction {
+    @extend %flex-col;
+    width: 100%;
+    text-align: center;
+    background-color: $color-grey;
+
+    &__heading {
+        padding-top: 35px;
+        width: 300px;
+        font-size: 28px;
+        margin: auto;  
+    }
+
+    &__text {
+        padding-top: 10px;
+        width: 320px;
+        font-size: 18px;
+        margin: 0 auto 30px;
+    }
+
+    &__btn {
+        margin: 0 auto 60px;
+        padding: 15px 20px;
+        color: white;
+        background: $color-btn;
+        border-radius: $radius-medium;
+        box-shadow: 0px 5px 10px 2px rgba(62, 73, 64, 0.12);
+
+        &:hover {
+            filter: brightness(111%);
+            box-shadow: 0px 5px 10px 2px rgba(82, 82, 82, 0.52);
+        }
+    }
+}
+
+.functioning {
+    @extend %flex-col;
+    justify-content: space-evenly;
+    margin: 40px 0;
+
+    &__heading {
+        width: 90%;
+        margin: auto;
+    }
+
+    &__list {
+        @extend %flex-col;
+        justify-content: space-evenly;
+        margin: auto;
+        padding: 0;
+        list-style-type: none;
+        counter-reset: number;
+    }
+
+    &__rule {
+        width: 80vw;
+        height: 70px;
+        margin: 20px 0;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 25px;
+        border-style: none;
+        text-align: left;
+        outline: none;
+        i {
+            padding: 0 20px 0 40px;
+        }
+
+        &__lightpurple {
+            background-color: lighten($color: $color-primary, $amount: 35%);
+            i {
+                color: $color-primary;
+            }
+        }
+    }
+}
+
+.functioning__step::before {
+    content: counter(number);
+    counter-increment: number;
+    position: absolute;
+    color: white;
+    background-color: $color-primary;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 10px 3px;
+    margin: 40px -10px;
+    border: 1px solid $color-primary;
+    border-radius: $radius-heavy;
+}
+
+.repertory {
+    @extend %flex-col;
+    background-color: $color-grey;
+
+    &__heading {
+        margin: 40px 20px 0;
+    }
+
+    &__container {
+        margin-bottom: 30px;
+    }
+}
+
+.card {
+    width: 90%;
+    margin: 20px auto;
+    background-color: white;
+    @include border;
+    position: relative;
+
+    &__new {
+        width: 80px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 5px;
+        background-color: $color-tertiary;
+        color: darken($color: $color-tertiary, $amount: 35%);
+        padding: 10px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    &__img {
+        width: 100%;
+        height: 200px;
+        @include border-radius-top;
+        object-fit: cover;
+        object-position: 25% 50%;
+    }
+
+    &__caption {
+        @extend %flex-row;
+        justify-content: space-between;
+        margin: 0 10px;
+        text-align: left;
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 900;
+    }
+}
+
+
+
+@media screen and (max-width: 375px) {
+    .functioning {
+
+        &__rule {
+            font-size: 14px;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .functioning {
+
+        &__heading {
+            text-align: center;
+        }
+
+        &__rule {
+            width: 20vw;
+        }
+    }
+
+    .repertory {
+
+        &__heading {
+            text-align: center;
+            margin: 40px 20px 20px;
+        }
+
+        &__container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+    }
+
+    .card {
+        width: 40vw;
+    }
+}
