@@ -1,0 +1,69 @@
+/* Rules of the animated hearts for all pages */
+
+.card__heart {
+    width: 50px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    i {
+        position: absolute;
+    }
+}
+
+.heart--full {
+    opacity: 0;
+    background: $color-heart;
+    background-clip: content-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 500ms;
+    transform: scale(0);
+}
+
+.card__heart:hover {
+
+    .heart--empty {
+        opacity: 0;
+        transition-duration: 1s;
+    }
+
+    .heart--full {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.menu__fav {
+    width: 50px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    i {
+        position: absolute;
+    }
+}
+
+.fav--full {
+    opacity: 0;
+    background: $color-heart;
+    background-clip: content-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 500ms;
+    transform: scale(0);
+}
+
+.menu__fav:hover {
+
+    .fav--empty {
+        opacity: 0;
+        transition-duration: 1s;
+    }
+
+    .fav--full {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

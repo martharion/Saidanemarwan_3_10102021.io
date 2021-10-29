@@ -1,0 +1,44 @@
+/* Rules for the menus' checks */
+
+.dish__check {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    right: -70px;
+    width: 70px;
+    font-size: 22px;
+    color: white;
+    background-color: $color-tertiary;
+    border-radius: 0 $radius-light $radius-light 0;
+    transition: all 500ms ease-out;
+    i {
+        transition: all 0 ease-in-out; 
+    }
+}
+
+.dish {
+
+    .dish:hover &__check {
+        right: 0;
+
+        i {
+            transform: rotate(360deg);
+            transition-duration: 500ms;
+        }
+    }
+
+    .dish:hover &__content {
+        width: calc(100% - 70px);
+    }
+
+    .dish:hover &__name {
+        width: calc(100% - 35px);
+    }
+
+    .dish:hover &__ingredient {
+        width: calc(100% - 35px);
+    }
+}

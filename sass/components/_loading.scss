@@ -1,0 +1,78 @@
+/* Rules of the loading for the index (main) page */
+
+.loading {
+    width: 100%;
+    height: 100%;
+    @extend %flex-col;
+    animation: anim-screen 2s ease;
+    animation-fill-mode: both;
+
+    &__box {
+        width: 250px;
+        height: 75px;
+        display: inline-flex;
+        justify-content: space-evenly;
+        position: fixed;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        animation: anim-length 2s ease;
+        visibility: hidden;
+    }
+
+    &__spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid $color-primary;
+        border-top: 3px solid $color-secondary;
+        border-radius: $radius-heavy;
+        margin: 8px 0 0 25px;
+        animation: anim-spin 2s linear infinite;
+    }
+
+    &__text {
+        font-size: 20px;
+        font-weight: bold;
+        color: $color-primary;
+    }
+}
+
+@keyframes anim-screen {
+
+    0% {
+        opacity: 0;
+    }
+
+    99% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes anim-length {
+
+    0% {
+        visibility: visible;
+    }
+
+    100% {
+        visibility: hidden;
+    }
+}
+
+@keyframes anim-spin {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
