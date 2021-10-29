@@ -1,0 +1,40 @@
+/* Footer rules for all pages */
+
+.svg-white-logo {
+    height: 0;
+}
+
+.footer {
+    width: 100%;
+    background-color: $color-black;
+
+    &__logo {
+        width: 200px;
+        height: 35px;
+        background-color: #FFFFFF;
+        margin: 10px 30px;
+        clip-path: url(#ohmyfoodlogo);
+    }
+
+    &__list {
+        @include no-deco;
+        margin: 0 30px 30px;
+        padding: 0;
+        li {
+            margin: 5px 0 5px 0;
+        }
+    }
+
+    &__item {
+        color: white;
+        i {
+            font-size: 12px;
+        }
+        .fa-utensils {
+            margin-right: 5px;
+        }
+        .fa-handsd-helping {
+            margin-right: 5px;
+        }
+    }
+}
